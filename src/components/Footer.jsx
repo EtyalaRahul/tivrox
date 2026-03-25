@@ -42,7 +42,13 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Tivrox Inc. All rights reserved.</p>
+          <div className="footer-copyright">
+            <p>&copy; {new Date().getFullYear()} Tivrox Inc. All rights reserved.</p>
+            <p style={{ marginTop: '8px', fontSize: '0.85rem' }}><b>
+              Designed and developed by rahuletyala
+              </b>
+              </p>
+          </div>
           <div className="legal-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
