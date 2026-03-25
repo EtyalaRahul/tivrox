@@ -1,0 +1,112 @@
+.about {
+  background: linear-gradient(180deg, var(--bg-color), rgba(15, 15, 20, 0.8), var(--bg-color));
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-desc {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 600px) {
+  .stats-grid {
+    flex-direction: column;
+  }
+}
+
+.stat-card {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid var(--primary-glow);
+}
+
+.stat-number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.about-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px 20px;
+  border-radius: 12px;
+  border-left: 3px solid var(--primary-glow);
+}
+
+/* Visual Abstract Graphic */
+.about-visual {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.abstract-sphere {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--primary-glow), var(--bg-color));
+  box-shadow: 0 0 50px var(--primary-glow);
+  z-index: 2;
+  animation: float 5s infinite;
+}
+
+.orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-1 {
+  width: 300px;
+  height: 300px;
+  animation: spin 20s linear infinite;
+  border-color: rgba(var(--primary-glow-rgb), 0.3);
+}
+
+.orbit-2 {
+  width: 450px;
+  height: 450px;
+  animation: spin 30s linear infinite reverse;
+  border-color: rgba(var(--secondary-glow-rgb), 0.3);
+}
+
+@keyframes spin {
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}

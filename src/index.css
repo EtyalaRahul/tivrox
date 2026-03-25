@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Default System (Dark) */
+  --bg-color: #050505;
+  --surface-color: rgba(20, 20, 20, 0.6);
+  --surface-color-solid: #141414;
+  --surface-border: rgba(255, 255, 255, 0.08);
+  
+  --primary-glow-rgb: 99, 102, 241; /* #6366f1 */
+  --secondary-glow-rgb: 168, 85, 247; /* #a855f7 */
+  
+  --primary-glow: rgb(var(--primary-glow-rgb));
+  --secondary-glow: rgb(var(--secondary-glow-rgb));
+  
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Theme 2: Dark Ocean */
+[data-theme="dark-ocean"] {
+  --bg-color: #020617;
+  --surface-color: rgba(15, 23, 42, 0.6);
+  --surface-color-solid: #0f172a;
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --primary-glow-rgb: 6, 182, 212; /* #06b6d4 */
+  --secondary-glow-rgb: 59, 130, 246; /* #3b82f6 */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+/* Theme 3: Dark Forest */
+[data-theme="dark-forest"] {
+  --bg-color: #022c22;
+  --surface-color: rgba(6, 78, 59, 0.6);
+  --surface-color-solid: #064e3b;
+  --surface-border: rgba(255, 255, 255, 0.1);
+  --primary-glow-rgb: 16, 185, 129; /* #10b981 */
+  --secondary-glow-rgb: 132, 204, 22; /* #84cc16 */
+  --text-main: #f0fdf4;
+  --text-muted: #6ee7b7;
+}
+
+/* Theme 4: Light Clean */
+[data-theme="light-clean"] {
+  --bg-color: #f8fafc;
+  --surface-color: rgba(255, 255, 255, 0.85);
+  --surface-color-solid: #ffffff;
+  --surface-border: rgba(0, 0, 0, 0.1);
+  --primary-glow-rgb: 37, 99, 235; /* #2563eb */
+  --secondary-glow-rgb: 124, 58, 237; /* #7c3aed */
+  --text-main: #0f172a;
+  --text-muted: #475569;
+}
+
+/* Theme 5: Light Sunset */
+[data-theme="light-sunset"] {
+  --bg-color: #fffbeb;
+  --surface-color: rgba(255, 255, 255, 0.8);
+  --surface-color-solid: #ffffff;
+  --surface-border: rgba(0, 0, 0, 0.1);
+  --primary-glow-rgb: 234, 88, 12; /* #ea580c */
+  --secondary-glow-rgb: 225, 29, 72; /* #e11d48 */
+  --text-main: #431407;
+  --text-muted: #78350f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+section {
+  padding: 100px 5%;
+  position: relative;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes blobMotion {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.ambient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg-color);
+  transition: background-color 0.5s ease;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: blobMotion 15s infinite alternate ease-in-out;
+  transition: background 0.5s ease;
+}
+
+.ambient-orb:nth-child(1) {
+  top: -10%; left: -10%;
+  width: 50vw; height: 50vw;
+  background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+}
+
+.ambient-orb:nth-child(2) {
+  bottom: -10%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, var(--secondary-glow), transparent 70%);
+  animation-delay: -5s;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary-glow) 50%, var(--secondary-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}

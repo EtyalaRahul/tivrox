@@ -1,0 +1,130 @@
+.pricing-section {
+  position: relative;
+  z-index: 2;
+}
+
+.mt-100 {
+  margin-top: 100px;
+}
+
+/* Branding Cards */
+.branding-grid {
+  gap: 25px;
+}
+.branding-card {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: var(--transition-smooth);
+}
+.branding-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--primary-glow-rgb), 0.4);
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.b-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(var(--primary-glow-rgb), 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-glow);
+}
+.b-titles h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+.b-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+.b-desc {
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Maintenance Cards */
+.maintenance-grid {
+  gap: 30px;
+}
+.maintenance-card {
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+.premium-maintenance {
+  border: 1px solid var(--primary-glow);
+  box-shadow: 0 10px 40px rgba(var(--primary-glow-rgb), 0.15);
+}
+.popular-badge {
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.maintenance-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.m-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-heading);
+  color: #fff;
+  margin-bottom: 30px;
+}
+.m-price span {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.maintenance-card ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: var(--text-muted);
+}
+
+/* Collaboration Table */
+.collaboration-block {
+  padding: 50px;
+}
+.table-responsive {
+  overflow-x: auto;
+}
+.collab-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+.collab-table th {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid var(--surface-border);
+  font-family: var(--font-heading);
+  color: #fff;
+}
+.collab-table td {
+  padding: 15px;
+  border-bottom: 1px solid var(--surface-border);
+  color: var(--text-muted);
+}
+.collab-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+@media (max-width: 768px) {
+  .collaboration-block { padding: 30px 15px; }
+}
